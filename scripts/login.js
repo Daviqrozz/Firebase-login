@@ -11,15 +11,19 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+
 
 const submit = document.getElementById('submit')
 
 submit.addEventListener('click', (event) => {
     event.preventDefault()
-
+    
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
+
+    if (password === '' && email === ''){
+        document.getElementById('ErrorSpan').textContent = 'Campos nao podem estar vazios!'
+    }
 
     const auth = getAuth();
 
@@ -32,6 +36,6 @@ submit.addEventListener('click', (event) => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            alert(`Error ${errorMessage}`)
+             document.getElementById('ErrorSpan').textContent = 'Credenciais invalidas!'
         });
 })
