@@ -1,31 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Register</title>
 </head>
+
 <body>
     <header>
         <h1>Registre-se</h1>
     </header>
-    
+
     <form id="signup-form">
         <br>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email">
-        <br><br>
+        <br>
+        
         <label for="password">Password:</label>
         <input type="password" id="password" name="password">
-        <br>
+
+        <div id="passwordRules">
+            <ul id="passwordRulesList">
+                <li id="passwordRulesListMinCharacters">8 caracteres</li>
+                <li id="passwordRulesListMinEspecialCharacters">Pelo menos um caractere especial (@,/,&,#)</li>
+            </ul>
+        </div>
+
         <button type="submit" id="RegisterButton">Registrar</button>
+        <span id="ErrorSpan"></span>
     </form>
     <div class="register-link">
-        <p>Ja tem uma conta?<a href="index.html"><button id="LoginPageButton">Logar-se</button></a></p>
-
-    
+        <p>Ja tem uma conta?<a class="registerButtonLink" href="index.html"><button type="button" id="LoginPageButton">Logar-se</button></a></p>
     </div>
     <script type="module" src="scripts/script.js"></script>
 </body>
+
 </html>

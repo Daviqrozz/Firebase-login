@@ -36,6 +36,6 @@ submit.addEventListener('click', (event) => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-             document.getElementById('ErrorSpan').textContent = 'Credenciais invalidas!'
+            document.getElementById('ErrorSpan').textContent = 'Credenciais invalidas!'
         });
 })
